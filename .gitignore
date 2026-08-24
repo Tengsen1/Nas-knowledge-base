@@ -1,0 +1,15 @@
+# Obsidian workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Plugin runtime caches
+.obsidian/plugins/*/data.json
+.obsidian/plugins/dataview/data.json
+.obsidian/cache/
+
+# System garbage
+.DS_Store
+Thumbs.db
+
+# Trash
+.trash/

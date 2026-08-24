@@ -1,0 +1,19 @@
+services:
+  sun-panel:
+    image: hslr/sun-panel:latest
+    container_name: sun-panel
+    restart: always
+    ports:
+      - "3002:3002"
+    volumes:
+      - ./conf:/app/conf
+      - ./uploads:/app/uploads
+      - ./database:/app/database
+      - /var/run/docker.sock:/var/run/docker.sock
+
+# 注意：
+# 1. SQLite 数据库实际存储在 ./conf/database/database.db（由 conf.ini 指定），
+#    而非 ./database/ 目录。清理旧数据时必须删除 conf/ 目录。
+# 2. 首次启动后需重置密码：docker exec sun-panel ./sun-panel -password-reset
+#    重置后凭据：admin@sun.cc / 12345678
+# 3. docker.sock 挂载用于在面板中显示容器运行状态（可选）
