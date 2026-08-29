@@ -13,3 +13,7 @@ Thumbs.db
 
 # Trash
 .trash/
+
+# NAS sync runtime files
+sync-vault.sh
+sync.log
